@@ -20,6 +20,7 @@ const qiniuConfig =require('./config/qiniu_my');
 
 // 路由
 const routers = require('./routers/index')
+const healthRouter = require('./routers/health')
 const {isValidImage} = require("./utils/utils");
 const {uploadFile} = require("./utils/manageImageWithQiniu");
 
@@ -103,6 +104,8 @@ app.use(koa_jwt({
 // 验证
 app.use(authorization())
 // 路由加载
+// 健康检查路由（Render默认会访问/health）
+app.use(healthRouter.routes()).use(healthRouter.allowedMethods())
 app.use(routers.routes()).use(routers.allowedMethods())
 app.on('error', err => {
   /*
@@ -113,4 +116,5 @@ app.on('error', err => {
 // 端口
 app.listen(Port, () => {
   consola.success(`Server running at Port:${Port}`)
+  console.log(`Health check: http://localhost:${Port}/health`)
 })
