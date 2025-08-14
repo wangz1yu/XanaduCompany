@@ -95,6 +95,8 @@ app.use(koa_jwt({
   secret: 'Aerowang'
 }).unless({
   path: [
+    /^\/health/,
+    /^\/api\/v1\/health/,
     /^\/api\/v1\/web/,
     /^\/api\/v1\/admin\/login/,
     /^\/api\/v1\/admin\/register/,
