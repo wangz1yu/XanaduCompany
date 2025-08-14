@@ -3,7 +3,7 @@ const JobCategory = sequelize.define(
     "aw_job_category",
     {
       id: {
-        type: DataTypes.INTEGER(11),
+        type: DataTypes.INTEGER,
         allowNull: false, // 是否允许为空
         autoIncrement: true,
         primaryKey: true, // 是否主键
@@ -31,7 +31,7 @@ const JobCategory = sequelize.define(
         comment: '父级职位类别'
       },
       depth: {
-        type: DataTypes.INTEGER(11),
+        type: DataTypes.INTEGER,
         allowNull: false
       },
     }, {

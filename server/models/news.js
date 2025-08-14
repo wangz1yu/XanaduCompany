@@ -6,7 +6,7 @@ const News = sequelize.define(
   'aw_news',
   {
     news_id: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.INTEGER,
       allowNull: false, // 是否允许为空
       autoIncrement: true,
       primaryKey: true, // 是否主键

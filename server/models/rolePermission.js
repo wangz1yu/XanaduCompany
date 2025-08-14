@@ -12,7 +12,7 @@ const RolePermission = sequelize.define(
       primaryKey: true,
     },
     state: {
-      type: DataTypes.INTEGER('tiny'),
+      type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: '1',
       comment: '状态：1/正常'

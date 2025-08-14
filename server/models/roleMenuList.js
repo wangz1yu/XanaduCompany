@@ -12,7 +12,7 @@ const RoleMenuList = sequelize.define(
       primaryKey: true, // 是否主键
     },
     state: {
-      type: DataTypes.INTEGER('tiny'), // 字段类型
+      type: DataTypes.INTEGER, // 字段类型
       allowNull: false, // 是否允许为空
       defaultValue: '1',
       comment: '状态：1/正常'
