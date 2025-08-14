@@ -1,0 +1,6 @@
+# Admin后台 Render部署脚本
+build: cd admin && npm install --legacy-peer-deps && NODE_OPTIONS="--openssl-legacy-provider" npm run build:prod
+publish: admin/dist
+
+# 环境变量
+VUE_APP_BASE_API=https://xanadu-backend.onrender.com/api/v1
