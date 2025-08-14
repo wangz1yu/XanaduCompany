@@ -14,9 +14,10 @@ router.get('/health', async (ctx) => {
 router.get('/api/v1/health', async (ctx) => {
   ctx.body = {
     status: 'ok',
-    version: '1.0.0',
+    version: '1.0.1',
     timestamp: new Date().toISOString(),
-    database: ctx.sequelize ? 'connected' : 'disconnected'
+    database: ctx.sequelize ? 'connected' : 'disconnected',
+    uptime: process.uptime()
   };
 });
 
