@@ -1,10 +1,16 @@
 const config = {
-    database: process.env.DB_NAME || "Xanadu", // 数据库名称
-    username: process.env.DB_USER || "root", // 用户名
-    password: process.env.DB_PASSWORD || "12345678", // 密码
-    host: process.env.DB_HOST || "localhost", // 主机地址
-    port: process.env.DB_PORT || "3306", // 端口号
-    dialect: "mysql", //数据库类型，支持: 'mysql', 'sqlite', 'postgres', 'mssql'
+    // 支持Render DATABASE_URL或独立环境变量
+    ...(process.env.DATABASE_URL ? {
+        url: process.env.DATABASE_URL,
+        dialect: "postgres"
+    } : {
+        database: process.env.DB_NAME || "Xanadu", 
+        username: process.env.DB_USER || "root", 
+        password: process.env.DB_PASSWORD || "12345678", 
+        host: process.env.DB_HOST || "localhost", 
+        port: process.env.DB_PORT || "3306", 
+        dialect: process.env.DB_DIALECT || "mysql"
+    }),
     // logging: true, // 是否启用日志
     dialectOptions: process.env.NODE_ENV === 'production' ? {
         ssl: {
