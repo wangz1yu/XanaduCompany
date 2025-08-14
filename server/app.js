@@ -91,10 +91,6 @@ app.use(koaBody({
     },
   }
 }))
-
-// 健康检查路由（在JWT验证之前注册）
-app.use(healthRouter.routes()).use(healthRouter.allowedMethods())
-
 app.use(koa_jwt({
   secret: 'Aerowang'
 }).unless({
@@ -110,6 +106,8 @@ app.use(koa_jwt({
 // 验证
 app.use(authorization())
 // 路由加载
+// 健康检查路由（Render默认会访问/health）
+app.use(healthRouter.routes()).use(healthRouter.allowedMethods())
 app.use(routers.routes()).use(routers.allowedMethods())
 app.on('error', err => {
   /*

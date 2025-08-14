@@ -51,8 +51,6 @@ const Account = sequelize.define(
     },
     {
       timestamps: true, // 是否自动在数据表中添加数据操作时间
-      createdAt: 'created_at',
-      updatedAt: 'updated_at'
     }
     // {
     //   tableName: 'account'

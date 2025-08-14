@@ -45,11 +45,7 @@ Permission.belongsToMany(Role, { through: RolePermission })
 // 一对多
 // MenuList.hasMany(Permission, { foreignKey: 'menu_id' })
 // Permission.belongsTo(MenuList, { foreignKey: 'menu_id' })
-
-// 注释掉自动同步，因为我们已经手动创建了数据库表
-// sequelize.sync({ alter: true }).then(r => console.log('所有模型均已成功同步.'))
-console.log('数据库模型关联已建立，使用现有数据库表结构.')
-
+sequelize.sync({ alter: true }).then(r => console.log('所有模型均已成功同步.'))
 module.exports = {
   Op,
   Account,

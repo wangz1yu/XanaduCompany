@@ -11,21 +11,32 @@ const Permission = sequelize.define(
       autoIncrement: true,
       primaryKey: true,
     },
-    permission_name: {
+    path: {
       type: DataTypes.STRING,
       allowNull: false,
-      comment: '权限名称'
+      comment: '权限请求路径'
     },
-    permission_key:{
+    method:{
       type: DataTypes.STRING,
       allowNull: false,
-      comment: '权限标识'
+      comment: '请求方法'
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      comment: '权限描述'
+    },
+    state: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+      comment: '状态：1/正常'
     }
   },
   {
     timestamps: true,
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
+    createdAt: 'create_time',
+    updatedAt: 'update_time'
   }
   // {
   //   tableName: 'account'

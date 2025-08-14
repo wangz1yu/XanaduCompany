@@ -62,7 +62,7 @@
       <el-link
         type="info"
         :underline="false"
-        href="/admin/#/register"
+        @click="goToRegister"
       >
         还没有账号？点击注册
       </el-link>
@@ -130,6 +130,9 @@ export default {
       this.$nextTick(() => {
         this.$refs.password.focus()
       })
+    },
+    goToRegister() {
+      this.$router.push('/register')
     },
     handleLogin() {
       this.$refs.loginForm.validate(valid => {

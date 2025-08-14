@@ -80,6 +80,15 @@
       >
         注册
       </el-button>
+      
+      <el-link
+        type="info"
+        :underline="false"
+        @click="goToLogin"
+        style="display: flex; justify-content: flex-end; margin-top: 10px;"
+      >
+        已有账号？点击登录
+      </el-link>
 
       <!--<div class="tips">-->
       <!--  <span style="margin-right:20px;">username: admin</span>-->
@@ -167,6 +176,9 @@ export default {
       this.$nextTick(() => {
         this.$refs.password.focus()
       })
+    },
+    goToLogin() {
+      this.$router.push('/login')
     },
     handleRegister () {
       this.$refs.registerForm.validate(valid => {
