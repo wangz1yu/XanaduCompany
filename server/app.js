@@ -95,12 +95,12 @@ app.use(koa_jwt({
   secret: 'Aerowang'
 }).unless({
   path: [
-    /^\/health$/,
-    /^\/api\/v1\/health$/,
+    /^\/health/,
+    /^\/api\/v1\/health/,
     /^\/api\/v1\/web/,
-    /^\/api\/v1\/admin\/login$/,
-    /^\/api\/v1\/admin\/register$/,
-    /^\/static/
+    /^\/api\/v1\/admin\/login/,
+    /^\/api\/v1\/admin\/register/,
+    /^\/static\/upload/
   ] //除了这个地址，其他的URL都需要验证
 }))
 // 验证

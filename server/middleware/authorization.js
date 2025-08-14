@@ -12,9 +12,7 @@ module.exports = function () {
     if (url.substring(0, 11) === '/api/v1/web'
       || url === '/api/v1/admin/login'
       || url === '/api/v1/admin/register'
-      || url === '/api/v1/admin/logout'
-      || url === '/health'
-      || url === '/api/v1/health') {
+      || url === '/api/v1/admin/logout') {
       await next()
     } else {
       // 判断headers 中是否存在 authorization

@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve  --mode development",
-    "build": "vue-cli-service build --mode production",
-    "vercel-build": "npm run build",
+    "build": "NODE_OPTIONS=\"--openssl-legacy-provider\" vue-cli-service build --mode production",
+    "vercel-build": "NODE_OPTIONS=\"--openssl-legacy-provider\" npm run build",
     "lint": "vue-cli-service lint",
     "clear": "npx rimraf node_modules"
   },
