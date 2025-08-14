@@ -187,11 +187,48 @@ location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|webp|jfif)$
 
 期望大家能从文档不仅知道使用好本项目，更收获相关的技能，以使自己在前端上有所进步。看到这，还不点个star?留下你的star再嫖好吧（dog.）
 
-## 七、最后的最后
+## 七、云端部署 🚀
+
+### 已部署服务
+
+✅ **前端门户**: https://xanadu-company-f0c4ppgk4-wangziyus-projects.vercel.app
+✅ **管理后台**: https://admin-9a7ri5hlp-wangziyus-projects.vercel.app
+
+### 后端部署指南
+
+#### 方式1: Render (推荐 - 免费)
+1. 访问 [Render](https://render.com/) 并连接GitHub仓库
+2. 创建Web Service，配置：
+   - Build Command: `cd server && npm install`
+   - Start Command: `cd server && npm start`
+   - Environment Variables: 参考 `database-deployment-guide.md`
+
+#### 方式2: Railway
+1. 安装Railway CLI: `npm install -g @railway/cli`
+2. 运行部署脚本: `./deploy-railway.sh`
+
+### 数据库部署
+
+#### PlanetScale (推荐)
+1. 访问 [PlanetScale](https://planetscale.com/)
+2. 创建MySQL数据库: `xanadu-company`
+3. 导入 `server/init/initial_data.sql`
+4. 获取连接字符串并配置环境变量
+
+详细部署指南请参考：
+- 📖 [完整部署指南](vercel-deployment-guide.md)
+- 🗄️ [数据库部署指南](database-deployment-guide.md)
+
+### 登录凭据
+- **游客账户**: youke / a123456
+- **管理员**: admin / 654321
+
+## 八、最后的最后
 
 *记得给star哦ღ( ´･ᴗ･` )~*
 新群：434063310。（不保证回复时效性）
-## 八、zerotower69最后一次更新说明
+
+## 九、zerotower69最后一次更新说明
 1.项目的初衷是为了让大家有个vue3版本的语法对比，因此很多功能都和vue2分支的保持一致。
 由于开发难免有bug,如有需要自行参考vue2分支或者部署版本修改。
 2.我并对不任何人的使用体验负责，有bug欢迎你向我提问，但我不是授课老师。你需要的授课老师可能是：
